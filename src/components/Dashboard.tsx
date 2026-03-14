@@ -90,6 +90,13 @@ export default function Dashboard() {
   averageCAC:0,
   averageChurnRate:0
 }
+
+const logisticsSummary = mockData.logisticsSummary || {
+  containersInTransit:0,
+  onTimeDelivery:0,
+  temperatureAlerts:0,
+  inventoryDays:0
+}
   
   return (
     <div className="min-h-screen bg-background text-text p-8 font-sans">
