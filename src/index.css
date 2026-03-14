@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Following the Design System guidelines for components */
+  .btn-primary {
+    @apply bg-cta text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer shadow-md hover:opacity-90 hover:-translate-y-[1px] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-cta focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-primary border-2 border-primary px-6 py-3 rounded-lg font-semibold transition-all duration-200 cursor-pointer hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  .card {
+    @apply bg-panel rounded-xl p-6 shadow-md transition-all duration-200;
+  }
+  
+  .card-hoverable {
+    @apply cursor-pointer hover:shadow-lg hover:-translate-y-[2px];
+  }
+
+  .input {
+    @apply bg-slate-800 px-4 py-3 border border-slate-700 rounded-lg text-base transition-colors duration-200 focus:border-primary focus:outline-none focus:ring-4 focus:ring-primary/20 text-text placeholder:text-slate-400;
+  }
+}
