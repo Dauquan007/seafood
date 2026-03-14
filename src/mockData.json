@@ -1,76 +1,45 @@
 {
+  "analyticsSummary": {
+    "mrr": 1250000,
+    "averageCLV": 32000,
+    "averageCAC": 4500,
+    "averageChurnRate": 3.2
+  },
+
+  "logisticsSummary": {
+    "containersInTransit": 42,
+    "onTimeDelivery": 94,
+    "temperatureAlerts": 3,
+    "inventoryDays": 18
+  },
+
   "customers": [
     {
-      "id": "CUST-001",
-      "name": "Alex Nguyen",
-      "email": "alex@example.com",
-      "joinDate": "2023-01-15T00:00:00Z",
-      "totalSpend": 15000,
-      "orderCount": 12,
-      "lastOrderDate": "2023-11-20T00:00:00Z",
-      "segment": "VIP",
-      "churnProbability": 5.5,
-      "acquisitionSource": "Google Search",
-      "acquisitionCost": 45
+      "id": 1,
+      "name": "EU Distributor",
+      "totalSpend": 540000,
+      "churnProbability": 12
     },
     {
-      "id": "CUST-002",
-      "name": "Minh Tran",
-      "email": "minhtran@example.com",
-      "joinDate": "2023-05-10T00:00:00Z",
-      "totalSpend": 120,
-      "orderCount": 1,
-      "lastOrderDate": "2023-05-15T00:00:00Z",
-      "segment": "At-Risk",
-      "churnProbability": 85.2,
-      "acquisitionSource": "Facebook Ads",
-      "acquisitionCost": 90
-    },
-    {
-      "id": "CUST-003",
-      "name": "Sarah Le",
-      "email": "sarah.le@example.com",
-      "joinDate": "2023-03-22T00:00:00Z",
-      "totalSpend": 850,
-      "orderCount": 4,
-      "lastOrderDate": "2023-09-01T00:00:00Z",
-      "segment": "Loyal",
-      "churnProbability": 32.1,
-      "acquisitionSource": "Organic",
-      "acquisitionCost": 0
-    },
-    {
-      "id": "CUST-004",
-      "name": "John Doe",
-      "email": "johndoe@example.com",
-      "joinDate": "2023-08-01T00:00:00Z",
-      "totalSpend": 45,
-      "orderCount": 1,
-      "lastOrderDate": "2023-08-05T00:00:00Z",
-      "segment": "Churned",
-      "churnProbability": 99.0,
-      "acquisitionSource": "Facebook Ads",
-      "acquisitionCost": 120
-    },
-    {
-      "id": "CUST-005",
-      "name": "Emily Chen",
-      "email": "emily@example.com",
-      "joinDate": "2023-10-12T00:00:00Z",
-      "totalSpend": 340,
-      "orderCount": 2,
-      "lastOrderDate": "2023-11-25T00:00:00Z",
-      "segment": "New",
-      "churnProbability": 15.4,
-      "acquisitionSource": "Referral",
-      "acquisitionCost": 15
+      "id": 2,
+      "name": "US Importer",
+      "totalSpend": 720000,
+      "churnProbability": 25
     }
   ],
-  "analyticsSummary": {
-    "totalRevenue": 2545000,
-    "mrr": 125000,
-    "averageChurnRate": 12.4,
-    "averageCAC": 55,
-    "averageCLV": 850
-  }
+
+  "containers": [
+    {
+      "id": "CONT-001",
+      "route": "Phan Thiet → Rotterdam",
+      "temperature": -18,
+      "status": "In Transit"
+    },
+    {
+      "id": "CONT-002",
+      "route": "Phan Thiet → Los Angeles",
+      "temperature": -17,
+      "status": "Delayed"
+    }
+  ]
 }
