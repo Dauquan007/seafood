@@ -115,7 +115,7 @@ const logisticsSummary = mockData.logisticsSummary || {
       </header>
 
       {/* Stats Overview */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-6 mb-8">
         <StatCard 
           title="Total Revenue (MRR)" 
           value={`$${analyticsSummary.mrr.toLocaleString()}`}
@@ -144,6 +144,37 @@ const logisticsSummary = mockData.logisticsSummary || {
           isPositive={false} // Churn going up is negative
           icon={AlertTriangle}
         />
+        <StatCard
+ title="Containers in Transit"
+ value={`${logisticsSummary.containersInTransit}`}
+ change={2.3}
+ isPositive={true}
+ icon={TrendingUp}
+/>
+
+<StatCard
+ title="On-time Delivery"
+ value={`${logisticsSummary.onTimeDelivery}%`}
+ change={1.1}
+ isPositive={true}
+ icon={TrendingUp}
+/>
+
+<StatCard
+ title="Temperature Alerts"
+ value={`${logisticsSummary.temperatureAlerts}`}
+ change={-0.5}
+ isPositive={false}
+ icon={AlertTriangle}
+/>
+
+<StatCard
+ title="Inventory Days"
+ value={`${logisticsSummary.inventoryDays}`}
+ change={0.8}
+ isPositive={true}
+ icon={Users}
+/>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
