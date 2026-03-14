@@ -7,7 +7,6 @@ const [containers,setContainers] = useState<any[]>([])
 useEffect(()=>{
 
 async function loadContainers(){
-
 const {data,error} = await supabase
 .from("containers")
 .select("*")
