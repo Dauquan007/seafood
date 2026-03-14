@@ -1,6 +1,26 @@
+import { supabase } from "../lib/supabase"
 import mockData from "../mockData.json"
 
 export default function ContainerPanel(){
+const [containers,setContainers] = useState<any[]>([])
+
+useEffect(()=>{
+
+async function loadContainers(){
+
+const {data,error} = await supabase
+.from("containers")
+.select("*")
+
+if(data){
+setContainers(data)
+}
+
+}
+
+loadContainers()
+
+},[])
 
  return (
   <div className="card">
