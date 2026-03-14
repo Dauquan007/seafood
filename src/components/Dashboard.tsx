@@ -1,4 +1,5 @@
 console.log(mockData)
+import ContainerPanel from "./ContainerPanel"
 import { 
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
@@ -208,6 +209,7 @@ const logisticsSummary = mockData.logisticsSummary || {
         {/* Churn Prediction Side Panel */}
         <div className="lg:col-span-1">
           <ChurnPredictionList />
+          <ContainerPanel />
         </div>
       </div>
       
