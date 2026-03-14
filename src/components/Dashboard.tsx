@@ -39,7 +39,7 @@ const StatCard = ({ title, value, change, isPositive, icon: Icon }: StatCardProp
 
 const ChurnPredictionList = () => {
   // Sort customers by churn probability
-  const atRiskCustomers = [...mockData.customers]
+  const atRiskCustomers = [...(mockData.customers || [])]
     .sort((a, b) => b.churnProbability - a.churnProbability)
     .slice(0, 5); // top 5 highest risk
 
@@ -83,7 +83,12 @@ const revenueData = [
 ];
 
 export default function Dashboard() {
-  const { analyticsSummary } = mockData;
+  const analyticsSummary = mockData.analyticsSummary || {
+  mrr:0,
+  averageCLV:0,
+  averageCAC:0,
+  averageChurnRate:0
+}
   
   return (
     <div className="min-h-screen bg-background text-text p-8 font-sans">
