@@ -1,10 +1,27 @@
-console.log(mockData)
+import { useEffect, useState } from "react"
+import { supabase } from "../lib/supabase"
 import ContainerPanel from "./ContainerPanel"
 import { 
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
 import { Users, DollarSign, TrendingUp, AlertTriangle, ArrowUpRight, ArrowDownRight } from 'lucide-react';
 import mockData from '../mockData.json';
+const [containers, setContainers] = useState([])
+useEffect(() => {
+  fetchContainers()
+}, [])
+
+async function fetchContainers() {
+  const { data, error } = await supabase
+    .from("containers")
+    .select("*")
+
+  if (error) {
+    console.error("Supabase error:", error)
+  } else {
+    setContainers(data)
+  }
+}
 
 interface StatCardProps {
   title: string;
@@ -92,7 +109,12 @@ export default function Dashboard() {
   averageChurnRate:0
 }
 
-const logisticsSummary = mockData.logisticsSummary || {
+const logisticsSummary = {
+  containersInTransit: containers.filter(c => c.status === "In Transit").length,
+  onTimeDelivery: 92,
+  temperatureAlerts: containers.filter(c => c.status === "Temperature Alert").length,
+  inventoryDays: 18
+} || {
   containersInTransit:0,
   onTimeDelivery:0,
   temperatureAlerts:0,
