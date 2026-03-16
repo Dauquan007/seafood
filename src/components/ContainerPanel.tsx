@@ -54,17 +54,15 @@ return (
       </thead>
 
       <tbody>
-        {containers.map((c) => (
-          <tr key={c.id} className="border-b">
-            <td>{c.id}</td>
-            <td>{c.route}</td>
-            <td>{c.temperature}°C</td>
-            <td>{c.status}</td>
-          </tr>
+        {containers.map(c=>(
+<div key={c.id} className="border-b border-slate-700 py-2">
+{c.id} — {c.route} — {c.status}
+</div>
         ))}
       </tbody>
     </table>
   </div>
+  
 )
 }
 
