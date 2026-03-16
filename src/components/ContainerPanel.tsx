@@ -20,9 +20,25 @@ setContainers(data)
 loadContainers()
 
 },[])
+const channel = supabase
+  .channel("containers-changes")
+  .on(
+    "postgres_changes",
+    {
+      event: "*",
+      schema: "public",
+      table: "containers"
+    },
+    (payload) => {
+      fetchContainers()
+    }
+  )
+  .subscribe()
 
-return (
-  <div className="bg-white rounded-xl shadow p-4">
+return () => {
+  supabase.removeChannel(channel)
+}
+<div className="bg-white rounded-xl shadow p-4">
     <h2 className="text-lg font-bold mb-4">Live Containers</h2>
 
     <table className="w-full text-sm">
@@ -47,5 +63,6 @@ return (
       </tbody>
     </table>
   </div>
-)
-}
+}, [])
+
+
