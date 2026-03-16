@@ -48,7 +48,3 @@ return (
     </table>
   </div>
 )
-   </div>
-  </div>
- )
-}
