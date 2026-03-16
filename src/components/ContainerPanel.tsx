@@ -10,7 +10,7 @@ useEffect(()=>{
 loadContainers()
 
 const channel = supabase
-  .channel("containers-changes")
+  .channel("containers-realtime")
   .on(
     "postgres_changes",
     {
