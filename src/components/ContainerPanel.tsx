@@ -40,8 +40,8 @@ setContainers(data)
 
 }
 return (
-  <div className="bg-white rounded-xl shadow p-4">
-    <h2 className="text-lg font-bold mb-4">Live Containers</h2>
+  <div className="card mt-6">
+  <h3 className="font-bold mb-4">Containers</h3>
 
     <table className="w-full text-sm">
       <thead>
