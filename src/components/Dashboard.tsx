@@ -6,25 +6,6 @@ import {
 } from 'recharts';
 import { Users, DollarSign, TrendingUp, AlertTriangle, ArrowUpRight, ArrowDownRight } from 'lucide-react';
 import mockData from '../mockData.json';
-export default function Dashboard() {
-
-  const [containers, setContainers] = useState([])
-
-  useEffect(() => {
-    fetchContainers()
-  }, [])
-
-  async function fetchContainers() {
-    const { data, error } = await supabase
-      .from("containers")
-      .select("*")
-
-    if (error) {
-      console.error("Supabase error:", error)
-    } else {
-      setContainers(data)
-    }
-  }
 
 async function fetchContainers() {
   const { data, error } = await supabase
