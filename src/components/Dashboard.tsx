@@ -104,14 +104,6 @@ const revenueData = [
   { name: 'Jun', revenue: 125000, target: 100000 },
 ];
 
-export default function Dashboard() {
-  const analyticsSummary = mockData.analyticsSummary || {
-  mrr:0,
-  averageCLV:0,
-  averageCAC:0,
-  averageChurnRate:0
-}
-
 const logisticsSummary = {
   containersInTransit: containers.filter(c => c.status === "In Transit").length,
   onTimeDelivery: 92,
