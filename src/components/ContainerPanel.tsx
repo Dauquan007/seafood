@@ -6,16 +6,6 @@ const [containers,setContainers] = useState<any[]>([])
 
 useEffect(()=>{
 
-async function loadContainers(){
-const {data,error} = await supabase
-.from("containers")
-.select("*")
-
-if(data){
-setContainers(data)
-}
-
-}
 
 loadContainers()
 
@@ -38,5 +28,30 @@ return () => {
   supabase.removeChannel(channel)
 }
 }, [])
+
+async function loadContainers(){
+const {data,error} = await supabase
+.from("containers")
+.select("*")
+
+if(data){
+setContainers(data)
+}
+
+}
+return(
+<div className="card mt-6">
+<h3 className="font-bold mb-4">Containers</h3>
+
+{containers.map(c=>(
+<div key={c.id} className="border-b border-slate-700 py-2">
+{c.id} — {c.route} — {c.status}
+</div>
+))}
+
+</div>
+)
+
+}
 
 
