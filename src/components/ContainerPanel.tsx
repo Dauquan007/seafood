@@ -7,7 +7,7 @@ const [containers,setContainers] = useState<any[]>([])
 useEffect(()=>{
 
 
-loadContainers()
+fetchContainers()
 
 const channel = supabase
   .channel("containers-realtime")
@@ -29,7 +29,7 @@ return () => {
 }
 }, [])
 
-async function loadContainers(){
+async function fetchContainers(){
 const {data,error} = await supabase
 .from("containers")
 .select("*")
