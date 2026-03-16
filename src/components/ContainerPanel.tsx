@@ -39,19 +39,33 @@ setContainers(data)
 }
 
 }
-return(
-<div className="card mt-6">
-<h3 className="font-bold mb-4">Containers</h3>
+return (
+  <div className="bg-white rounded-xl shadow p-4">
+    <h2 className="text-lg font-bold mb-4">Live Containers</h2>
 
-{containers.map(c=>(
-<div key={c.id} className="border-b border-slate-700 py-2">
-{c.id} — {c.route} — {c.status}
-</div>
-))}
+    <table className="w-full text-sm">
+      <thead>
+        <tr className="text-left border-b">
+          <th>ID</th>
+          <th>Route</th>
+          <th>Temp</th>
+          <th>Status</th>
+        </tr>
+      </thead>
 
-</div>
+      <tbody>
+        {containers.map((c) => (
+          <tr key={c.id} className="border-b">
+            <td>{c.id}</td>
+            <td>{c.route}</td>
+            <td>{c.temperature}°C</td>
+            <td>{c.status}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
 )
-
 }
 
 
