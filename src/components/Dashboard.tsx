@@ -25,6 +25,12 @@ async function fetchContainers() {
     setContainers(data)
   }
 }
+  const analyticsSummary = mockData.analyticsSummary || {
+  mrr:0,
+  averageCLV:0,
+  averageCAC:0,
+  averageChurnRate:0
+}
 
 interface StatCardProps {
   title: string;
