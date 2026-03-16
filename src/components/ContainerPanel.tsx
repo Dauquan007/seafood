@@ -19,7 +19,6 @@ setContainers(data)
 
 loadContainers()
 
-}
 const channel = supabase
   .channel("containers-changes")
   .on(
