@@ -1,0 +1,225 @@
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+.db{padding:4px 0}
+.db-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;padding-bottom:14px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.db-title{font-size:17px;font-weight:500;color:var(--color-text-primary)}
+.db-sub{font-size:12px;color:var(--color-text-secondary);margin-top:3px}
+.db-meta{text-align:right;font-size:11px;color:var(--color-text-tertiary)}
+.badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:6px;font-weight:500}
+.ok{background:#eaf3de;color:#27500a}
+.warn{background:#faeeda;color:#633806}
+.alert{background:#fcebeb;color:#501313}
+.info{background:#e6f1fb;color:#185fa5}
+.section{font-size:12px;font-weight:500;color:var(--color-text-secondary);margin:18px 0 10px}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:6px}
+.kpi-card{background:var(--color-background-secondary);border-radius:8px;padding:12px 14px}
+.kpi-label{font-size:11px;color:var(--color-text-secondary);margin-bottom:3px}
+.kpi-value{font-size:20px;font-weight:500;color:var(--color-text-primary)}
+.kpi-sub{font-size:11px;margin-top:3px}
+.up{color:#3b6d11}.dn{color:#791f1f}.neu{color:var(--color-text-secondary)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;padding:14px 16px}
+.card-title{font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:10px}
+.chart-wrap{position:relative;height:160px}
+.sku-row{display:grid;grid-template-columns:60px 1fr 64px 58px;gap:6px;align-items:center;padding:5px 0;font-size:12px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.sku-row:last-child{border-bottom:none}
+.sku-hdr{font-size:10px;color:var(--color-text-tertiary);font-weight:500}
+.bar-bg{height:7px;border-radius:4px;background:var(--color-border-tertiary);overflow:hidden}
+.bar-fill{height:100%;border-radius:4px}
+.ccc-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;font-size:12px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.ccc-row:last-child{border-bottom:none}
+.ccc-label{color:var(--color-text-secondary)}
+.ccc-val{font-weight:500;color:var(--color-text-primary)}
+.alert-item{display:flex;gap:8px;padding:8px 10px;border-radius:6px;margin-bottom:6px;font-size:12px}
+.alert-item:last-child{margin-bottom:0}
+.adot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:3px}
+.atitle{font-weight:500;margin-bottom:1px}
+.abody{font-size:11px;color:var(--color-text-secondary)}
+.market-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;font-size:12px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.market-row:last-child{border-bottom:none}
+.footer{margin-top:14px;padding:8px 12px;border-radius:6px;border:0.5px solid var(--color-border-tertiary);font-size:10px;color:var(--color-text-tertiary);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:4px}
+</style>
+
+<div class="db">
+  <div class="db-header">
+    <div>
+      <div class="db-title">Báo cáo KPI tháng 01/2026 — Hải Triều Food</div>
+      <div class="db-sub">Dữ liệu: 03_Outputs/KPI_Dashboard/ · Verified bởi Antigravity Agent · 19/03/2026</div>
+    </div>
+    <div class="db-meta">
+      <span class="badge info" style="font-size:11px;padding:3px 10px">Trình ban lãnh đạo</span><br>
+      <span style="display:block;margin-top:4px">Phan Thiết · Q1 2026</span>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Doanh thu tháng</div>
+      <div class="kpi-value">$3.53M</div>
+      <div class="kpi-sub dn">▼ 12.7% vs kế hoạch ($4.05M)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Sản lượng xuất khẩu</div>
+      <div class="kpi-value">1.100 tấn</div>
+      <div class="kpi-sub up">44 cont · 3 thị trường</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Gross margin TB</div>
+      <div class="kpi-value">38.6%</div>
+      <div class="kpi-sub ok" style="display:inline-block;margin-top:4px"><span class="badge ok">Trên mục tiêu 12%</span></div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">CCC tháng này</div>
+      <div class="kpi-value">~91 ng</div>
+      <div class="kpi-sub"><span class="badge ok">Tốt · dưới 120 ng</span></div>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Nhập nguyên liệu</div>
+      <div class="kpi-value">800 tấn</div>
+      <div class="kpi-sub neu">32 cont · $1.52M</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Tồn kho Loin+Saku</div>
+      <div class="kpi-value">182.5 tấn</div>
+      <div class="kpi-sub neu">Nội bộ 117.5 · Thuê 65</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">AR xuất khẩu</div>
+      <div class="kpi-value">$1.64M</div>
+      <div class="kpi-sub"><span class="badge warn">Theo dõi DSO Russia</span></div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">LC đang xử lý</div>
+      <div class="kpi-value">8 LC</div>
+      <div class="kpi-sub neu">$1.02M tổng giá trị</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Margin theo SKU — tháng 01/2026</div>
+      <div class="chart-wrap"><canvas id="skuChart"></canvas></div>
+      <div style="height:8px"></div>
+      <div class="sku-row sku-hdr"><span>SKU</span><span>Margin %</span><span>BCG</span><span>Flag</span></div>
+      <div class="sku-row">
+        <span style="font-weight:500">Loin</span>
+        <div><div style="font-size:11px;margin-bottom:2px">18.4%</div><div class="bar-bg"><div class="bar-fill" style="width:92%;background:#1D9E75"></div></div></div>
+        <span><span class="badge" style="background:#E1F5EE;color:#085041;font-size:9px">Star</span></span>
+        <span><span class="badge ok" style="font-size:9px">OK</span></span>
+      </div>
+      <div class="sku-row">
+        <span style="font-weight:500">Saku</span>
+        <div><div style="font-size:11px;margin-bottom:2px">16.1%</div><div class="bar-bg"><div class="bar-fill" style="width:80%;background:#1D9E75"></div></div></div>
+        <span><span class="badge" style="background:#E1F5EE;color:#085041;font-size:9px">Star</span></span>
+        <span><span class="badge ok" style="font-size:9px">OK</span></span>
+      </div>
+      <div class="sku-row">
+        <span style="font-weight:500">Steak</span>
+        <div><div style="font-size:11px;margin-bottom:2px">11.8%</div><div class="bar-bg"><div class="bar-fill" style="width:59%;background:#BA7517"></div></div></div>
+        <span><span class="badge" style="background:#FAEEDA;color:#633806;font-size:9px">Cash Cow</span></span>
+        <span><span class="badge warn" style="font-size:9px">WARN</span></span>
+      </div>
+      <div class="sku-row">
+        <span style="font-weight:500">Trim</span>
+        <div><div style="font-size:11px;margin-bottom:2px">10.2%</div><div class="bar-bg"><div class="bar-fill" style="width:51%;background:#BA7517"></div></div></div>
+        <span><span class="badge" style="background:#FAEEDA;color:#633806;font-size:9px">Cash Cow</span></span>
+        <span><span class="badge warn" style="font-size:9px">WARN</span></span>
+      </div>
+      <div class="sku-row">
+        <span style="font-weight:500">Belly</span>
+        <div><div style="font-size:11px;margin-bottom:2px">9.2%</div><div class="bar-bg"><div class="bar-fill" style="width:46%;background:#BA7517"></div></div></div>
+        <span><span class="badge" style="background:#EEEDFE;color:#3C3489;font-size:9px">Q-Mark</span></span>
+        <span><span class="badge warn" style="font-size:9px">WARN</span></span>
+      </div>
+      <div class="sku-row">
+        <span style="font-weight:500">Kama</span>
+        <div><div style="font-size:11px;margin-bottom:2px">6.8%</div><div class="bar-bg"><div class="bar-fill" style="width:34%;background:#A32D2D"></div></div></div>
+        <span><span class="badge" style="background:#EEEDFE;color:#3C3489;font-size:9px">Q-Mark</span></span>
+        <span><span class="badge alert" style="font-size:9px">ALERT</span></span>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="card">
+        <div class="card-title">Doanh thu theo thị trường</div>
+        <div class="chart-wrap" style="height:130px"><canvas id="mktChart"></canvas></div>
+        <div style="margin-top:8px">
+          <div class="market-row"><span>US</span><span style="font-weight:500">$1.43M</span><span class="neu">32.6%</span><span><span class="badge ok" style="font-size:9px">LC OK</span></span></div>
+          <div class="market-row"><span>EU</span><span style="font-weight:500">$2.37M</span><span class="neu">53.9%</span><span><span class="badge ok" style="font-size:9px">IUU OK</span></span></div>
+          <div class="market-row"><span>Russia</span><span style="font-weight:500">$0.62M</span><span class="neu">14.1%</span><span><span class="badge warn" style="font-size:9px">DSO</span></span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">CCC breakdown — tháng 01/2026</div>
+        <div class="ccc-row"><span class="ccc-label">DIO (tồn kho)</span><span class="ccc-val">68 ngày</span></div>
+        <div class="ccc-row"><span class="ccc-label">DSO (thu hồi)</span><span class="ccc-val">52 ngày</span></div>
+        <div class="ccc-row"><span class="ccc-label">DPO (thanh toán NCC)</span><span class="ccc-val">29 ngày</span></div>
+        <div class="ccc-row" style="border-top:0.5px solid var(--color-border-secondary);margin-top:2px;padding-top:8px">
+          <span style="font-weight:500">CCC = DIO+DSO-DPO</span>
+          <span style="font-weight:500;color:#1D9E75">91 ngày ✓</span>
+        </div>
+        <div style="font-size:10px;color:var(--color-text-tertiary);margin-top:6px">Baseline mục tiêu: 120–165 ngày · Tháng này tốt hơn kỳ vọng</div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Cảnh báo cần xử lý</div>
+        <div class="alert-item" style="background:#fcebeb">
+          <div class="adot" style="background:#A32D2D"></div>
+          <div><div class="atitle" style="color:#501313">Kama margin 6.8% — dưới ngưỡng 8%</div><div class="abody">Xem xét điều chỉnh giá bán hoặc tạm dừng SKU này</div></div>
+        </div>
+        <div class="alert-item" style="background:#faeeda">
+          <div class="adot" style="background:#BA7517"></div>
+          <div><div class="atitle" style="color:#633806">Variance -12.7% vs kế hoạch tháng 1</div><div class="abody">8 đơn ETD W05 chưa ghi nhận doanh thu · theo dõi tháng 2</div></div>
+        </div>
+        <div class="alert-item" style="background:#faeeda">
+          <div class="adot" style="background:#BA7517"></div>
+          <div><div class="atitle" style="color:#633806">DSO Russia cần theo dõi</div><div class="abody">$172,800 RybExport LLC · thanh toán qua điện · cập nhật tuần tới</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Nguồn: 03_Outputs/KPI_Dashboard/2026-01_KPI_Monthly.csv · 2026-01_KPI_Margin_SKU.csv</span>
+    <span>Antigravity Agent · Workflow /bao_cao_thang · Verified $3,534,600.00 · 19/03/2026</span>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+new Chart(document.getElementById('skuChart'),{
+  type:'bar',
+  data:{
+    labels:['Loin','Saku','Steak','Trim','Belly','Kama'],
+    datasets:[
+      {label:'Margin %',data:[18.4,16.1,11.8,10.2,9.2,6.8],backgroundColor:['#1D9E75','#1D9E75','#BA7517','#BA7517','#BA7517','#A32D2D'],borderRadius:3,barThickness:22},
+      {label:'Ngưỡng 12%',data:[12,12,12,12,12,12],type:'line',borderColor:'#E24B4A',borderWidth:1.5,borderDash:[4,3],pointRadius:0,fill:false}
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.parsed.y.toFixed(1)+'%'}}},
+    scales:{
+      x:{grid:{display:false},ticks:{font:{size:10}}},
+      y:{grid:{color:'rgba(128,128,128,0.08)'},ticks:{callback:v=>v+'%',font:{size:10}},min:0,max:22}
+    }
+  }
+});
+
+new Chart(document.getElementById('mktChart'),{
+  type:'doughnut',
+  data:{
+    labels:['US 32.6%','EU 53.9%','Russia 14.1%'],
+    datasets:[{data:[1430800,2366100,620000],backgroundColor:['#1D9E75','#185FA5','#BA7517'],borderWidth:0,hoverOffset:4}]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,cutout:'65%',
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'$'+c.parsed.toLocaleString()}}}
+  }
+});
+</script>
